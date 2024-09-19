@@ -6,7 +6,7 @@
 
 return [
     // 默认缓存驱动
-    'default' => env('cache.driver', 'redis'),
+    'default' => env('cache.driver', 'file'),
 
     // 缓存连接方式配置
     'stores'  => [
@@ -28,7 +28,7 @@ return [
         'redis'   =>  [
             // 驱动方式
             'type'   => 'redis',
-            'prefix'     => 'bc:',
+            'prefix'     => 'tp:',
             'expire'     => 0,
             'tag_prefix' => 'tag:',
             // 服务器地址
