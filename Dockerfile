@@ -1,6 +1,10 @@
 
 FROM  php:7.4-fpm
 
+COPY ./thinkphp.sh  /usr/local/bin/thinkphp
+
+RUN  chmod +x   /usr/local/bin/thinkphp
+
 COPY ./ /www
 
 WORKDIR /www
@@ -16,10 +20,6 @@ RUN apt-get update && apt-get install -y \
     libpng-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
-
-COPY ./thinkphp.sh  /etc/local/bin/thinkphp
-
-RUN  chmod +x   /etc/local/bin/thinkphp
 
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
