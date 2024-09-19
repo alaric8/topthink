@@ -28,6 +28,14 @@ RUN composer --version
 
 RUN  composer install 
 
+
+EXPOSE 9000
+
+EXPOSE 1236  
+# websocket 
+EXPOSE 2348
+
+
 ENTRYPOINT [ "thinkphp" ]
 
 
