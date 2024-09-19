@@ -36,6 +36,6 @@ EXPOSE 1236
 EXPOSE 2348
 
 
-ENTRYPOINT [ "thinkphp" ]
+CMD [ "thinkphp"]
 
 
