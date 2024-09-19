@@ -21,6 +21,13 @@ COPY ./thinkphp.sh  /etc/local/bin/thinkphp
 
 RUN  chmod +x   /etc/local/bin/thinkphp
 
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# 确认 Composer 安装成功
+RUN composer --version
+
+RUN  composer install 
+
 ENTRYPOINT [ "thinkphp" ]
 
 
