@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  topthink:
+    image: topthink
+    build:
+      context: .
+      dockerfile: ./Dockerfile
