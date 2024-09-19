@@ -1,6 +1,10 @@
+FROM compose as packages
+
 FROM  php:7.4-fpm
 
 RUN mkdir /www
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
 WORKDIR /www
 
