@@ -6,3 +6,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80"
+  

@@ -1,10 +1,7 @@
-FROM compose as packages
 
 FROM  php:7.4-fpm
 
-RUN mkdir /www
-
-COPY --from=composer /usr/bin/composer /usr/bin/composer
+COPY ./ /www
 
 WORKDIR /www
 
@@ -20,5 +17,4 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
 
-ENTRYPOINT [ "php","think" ]
 
