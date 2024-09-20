@@ -1,6 +1,8 @@
 
 FROM  php:7.4-fpm
 
+USER www-data:www-data
+
 COPY ./thinkphp.sh  /usr/local/bin/thinkphp
 
 RUN  chmod +x   /usr/local/bin/thinkphp
@@ -28,7 +30,7 @@ RUN composer --version
 
 RUN  composer install 
 
-USER www-data:www-data
+
 
 EXPOSE 9000
 
