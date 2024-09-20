@@ -23,11 +23,14 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
 
-USER www-data:www-data
+
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 # 确认 Composer 安装成功
 RUN composer --version
+
+USER www-data:www-data
 
 RUN  composer install 
 
