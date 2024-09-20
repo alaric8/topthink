@@ -35,7 +35,6 @@ USER www-data:www-data
 RUN  composer install 
 
 
-
 EXPOSE 9000
 
 EXPOSE 1236  
