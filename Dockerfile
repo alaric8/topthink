@@ -28,7 +28,7 @@ RUN composer --version
 
 RUN  composer install 
 
-USER wwwdata:www-data
+USER www-data:www-data
 
 EXPOSE 9000
 
