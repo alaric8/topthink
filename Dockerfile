@@ -34,8 +34,6 @@ USER www-data:www-data
 
 RUN  composer install 
 
-RUN mkdir -p /public/storage 
-
 EXPOSE 9000
 
 EXPOSE 1236  
